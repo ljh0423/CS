@@ -1,0 +1,1 @@
+void regular(int n);
