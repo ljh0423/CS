@@ -1,28 +1,13 @@
-all: main clean-deps
+a3q6: main.o re.o
+	g++ -std=c++14 main.o re.o -o a3q6
 
-CXX = clang++
-override CXXFLAGS += -g -Wno-everything
+main.o: main.cc re.h
+	g++ -std=c++14 -Wall -g -c main.cc
 
-SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp' -print | sed -e 's/ /\\ /g')
-OBJS = $(SRCS:.cpp=.o)
-DEPS = $(SRCS:.cpp=.d)
+re.o: re.cc re.h
+	g++ -std=c++14 -Wall -g -c re.cc
 
-%.d: %.cpp
-	@set -e; rm -f "$@"; \
-	$(CXX) -MM $(CXXFLAGS) "$<" > "$@.$$$$"; \
-	sed 's,\([^:]*\)\.o[ :]*,\1.o \1.d : ,g' < "$@.$$$$" > "$@"; \
-	rm -f "$@.$$$$"
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c "$<" -o "$@"
-
-include $(DEPS)
-
-main: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o "$@"
+.PHONY: clean
 
 clean:
-	rm -f $(OBJS) $(DEPS) main
-
-clean-deps:
-	rm -f $(DEPS)
+	rm a3q6 *.o
