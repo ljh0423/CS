@@ -1,0 +1,46 @@
+getDefault m1
+getInit m2
+[] m1 1
+[] m1 2
+[] m1 4
+= m2 m1
+erase m2 2
+clear m1
+= m1 m2
+[] m1 4
+[] m1 5
+[] m1 6
+[] m1 7
+= m2 m1
+erase m2 4
+clear m1
+= m1 m2
+[] m1 4
+[] m1 1
+[] m1 2
+[] m1 4
+= m2 m1
+erase m2 2
+= m1 m2
+[] m1 4
+[] m1 5
+[] m1 7
+size m1
+size m2
+= m2 m1
+erase m2 4
+clear m1
+= m1 m2
+[] m1 4
+[] m1 1
+[] m1 2
+= m2 m1
+count m1 2
+erase m2 2
+= m1 m2
+[] m1 4
+= m2 m1
+erase m2 4
+clear m1
+= m1 m2
+[] m1 4
