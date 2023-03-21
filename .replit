@@ -13,7 +13,7 @@ start = "ccls"
 support = true
 
 [debugger.compile]
-command = ["make", "main-debug"]
+command = ["make"]
 noFileArgs = true
 
 [debugger.interactive]
@@ -51,7 +51,7 @@ externalConsole = false
 logging = {}
 miDebuggerPath = "gdb"
 name = "g++ - Build and debug active file"
-program = "./main-debug"
+program = "./main"
 request = "launch"
 setupCommands = [
 	{ description = "Enable pretty-printing for gdb", ignoreFailures = true, text = "-enable-pretty-printing" }
