@@ -1,0 +1,2 @@
+int isqrt(int n);
+
