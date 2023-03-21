@@ -1,0 +1,22 @@
+getInit d1
+getDefault d2
+getDefault d3
+push_back d1 1
+pop_front d1
+push_front d1 2
+push_back d1 3
+push_front d1 4
+push_back d1 5
+push_front d1 6
+push_back d1 7
+push_front d1 8
+push_back d1 9
+= d2 d1
+= d3 d2
+pop_back d3
+= d1 d3
+[] d1 6
+[] d2 7
+[] d1 5
+[] d3 6
+[] d2 6
